@@ -8,6 +8,10 @@ const swaggerUi = require("swagger-ui-express");
 const connectDB = require("./config/db");
 const swaggerSpec = require("./swagger");
 const authRoutes = require("./routes/authRoutes");
+const usersRoutes = require("./routes/usersRoutes");
+const movieInfoRoutes = require("./routes/movieInfoRoutes");
+const rentedMoviesRoutes = require("./routes/rentedMoviesRoutes");
+const errorHandler = require("./errors/errorHandler");
 
 dotenv.config();
 
@@ -45,8 +49,13 @@ app.get("/", (req, res) => {
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/auth", authRoutes);
 
-const PORT = process.env.PORT || 8080;
 
+app.use("/users", usersRoutes);
+app.use("/info", movieInfoRoutes);
+app.use("/rented", rentedMoviesRoutes);
+
+const PORT = process.env.PORT || 8080;
+app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Swagger Docs: http://localhost:${PORT}/api-docs`);
