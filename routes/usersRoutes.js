@@ -89,9 +89,9 @@
  *         description: User updated successfully
  */
   
- /**
+/**
  * @swagger
- * /users:
+ * /users/{id}:
  *   delete:
  *     summary: Delete user by ID
  *     tags: [Users]
@@ -103,7 +103,7 @@
  *           type: string
  *     responses:
  *       200:
- *         description: User deleted
+ *         description: User deleted successfully
  */
 
 const express = require("express");

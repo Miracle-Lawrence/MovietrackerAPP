@@ -92,7 +92,7 @@
  
  /**
  * @swagger
- * /rented:
+ * /rented/{id}:
  *   delete:
  *     summary: Delete rented movie by ID
  *     tags: [Rented Movies]
@@ -104,7 +104,7 @@
  *           type: string
  *     responses:
  *       200:
- *         description: Rented movie deleted
+ *         description: Rented movie deleted successfully
  */
 
 const express = require("express");
