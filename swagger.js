@@ -11,8 +11,8 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:8080",
-        description: "Local server",
+        url: "https://movietrackerapp.onrender.com",
+        description: "public server",
       },
     ],
   },
